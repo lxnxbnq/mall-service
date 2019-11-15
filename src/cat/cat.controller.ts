@@ -3,7 +3,10 @@ import { CatService } from './cat.service';
 
 @Controller('/cat')
 export class CatController {
-  constructor(private readonly catService: CatService) {}
+  private readonly catService: CatService
+  constructor(_catService: CatService) {
+    this.catService = _catService
+  }
 
   @Get()
   getHello(): string {

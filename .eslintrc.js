@@ -21,7 +21,7 @@ module.exports = {
     ],
     "rules": {
         "no-var": 1,
-        'no-console': 1,
+        // 'no-console': 1,
         'consistent-return': 1,
         'default-case': 1,
         // note you must disable the base rule as it can report incorrect errors
