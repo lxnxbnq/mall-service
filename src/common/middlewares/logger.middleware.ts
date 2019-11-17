@@ -19,3 +19,8 @@ export function logger(req: Request, res: Response, next: Function) {
   console.log('Response---', res.req.body);
   console.groupEnd()
 }
+
+export function logger2(req: Request, res: Response, next: Function) {
+  console.log('logger2');
+  next();
+}
