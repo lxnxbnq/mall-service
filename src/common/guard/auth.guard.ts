@@ -2,7 +2,10 @@ import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
 
 function validateRequest(request: any) {
-  return true;
+  if ( request ) {
+    return true
+  }
+  return false;
 }
 
 @Injectable()

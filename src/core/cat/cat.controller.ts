@@ -1,6 +1,6 @@
-import { Controller, Get , Post, HttpException, HttpStatus, Body, UsePipes, Query} from '@nestjs/common';
+import { Controller, Get , HttpException, HttpStatus, UsePipes, Query} from '@nestjs/common';
 import { CatService } from './cat.service';
-import { ValidationPipe } from "../common/pipe/validation.pipe";
+import { ValidationPipe } from "../../common/pipe/validation.pipe";
 import { CatInfo } from "./dto/create-cat.dto";
 
 @Controller('/cat')
