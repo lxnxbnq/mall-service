@@ -9,6 +9,6 @@ async function bootstrap() {
   app.use(logger)
   app.useGlobalFilters(new HttpExceptionFilter())
   app.useGlobalGuards(new AuthGuard())
-  await app.listen(3001);
+  await app.listen(8000);
 }
 bootstrap();

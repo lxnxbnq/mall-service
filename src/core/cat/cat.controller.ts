@@ -3,7 +3,7 @@ import { CatService } from './cat.service';
 import { ValidationPipe } from "../../common/pipe/validation.pipe";
 import { CatInfo } from "./dto/create-cat.dto";
 
-@Controller('/cat')
+@Controller('/api/v1/cat')
 export class CatController {
   constructor(private readonly catService: CatService) {}
 
