@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { CatModule } from './core/cat/cat.module';
 import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
@@ -12,6 +13,20 @@ import { UsersModule } from './core/users/users.module';
       useClass: HttpExceptionFilter,
     },
   ],
-  imports: [CatModule, AuthModule, UsersModule]
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'root',
+      database: 'test',
+      entities: [],
+      synchronize: true,
+    }),
+    CatModule,
+    AuthModule,
+    UsersModule,
+  ]
 })
 export class AppModule {}
