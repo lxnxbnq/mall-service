@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Connection } from 'typeorm'
 import { CatModule } from './core/cat/cat.module';
 import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
@@ -19,7 +20,7 @@ import { UsersModule } from './core/users/users.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'root',
+      password: 'Zqy19970114',
       database: 'test',
       entities: [],
       synchronize: true,
@@ -29,4 +30,6 @@ import { UsersModule } from './core/users/users.module';
     UsersModule,
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly connection: Connection) {}
+}
