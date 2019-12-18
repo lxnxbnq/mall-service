@@ -6,6 +6,8 @@ import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
 import { AuthModule } from './core/auth/auth.module';
 import { UsersModule } from './core/users/users.module';
+import { Photo } from './core/photo/photo.entity';
+import { PhotoModule } from './core/photo/photo.module'
 
 @Module({
   providers: [
@@ -22,12 +24,13 @@ import { UsersModule } from './core/users/users.module';
       username: 'root',
       password: 'Zqy19970114',
       database: 'test',
-      entities: [],
+      entities: [Photo],
       synchronize: true,
     }),
     CatModule,
     AuthModule,
     UsersModule,
+    PhotoModule,
   ]
 })
 export class AppModule {

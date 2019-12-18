@@ -6,10 +6,10 @@ export class Photo {
   id: number;
 
   @Column({ length: 500 })
-  username: string;
+  name: string;
 
   @Column('text')
-  nickname: string;
+  description: string;
 
   @Column()
   filename: string;
