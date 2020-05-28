@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class CatService {
-  getHello(): any {
+export class PmsService {
+  getList(): any {
     return {msg: `Hello world`};
   }
   showCat(catInfo): string {
